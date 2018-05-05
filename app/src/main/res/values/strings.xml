@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TK Helper</string>
+    <string name="activity_ping_tool_search_hint">Host name or IP address</string>
+    <string name="activity_ping_tool_ping_button_text">Ping</string>
+    <string name="drawer_menu_main_item_home_title">Home</string>
+    <string name="drawer_menu_main_item_ping_title">Ping</string>
+    <string name="drawer_action_open">open</string>
+    <string name="drawer_action_close">close</string>
+    <string name="item_ping_result_success_title">Answer from </string>
+    <string name="item_ping_result_failed_title">No answer</string>
+    <string name="activity_port_scanner_scan_button_text">Scan</string>
+    <string name="drawer_menu_main_item_port_scan_title">Port Scanner</string>
+</resources>

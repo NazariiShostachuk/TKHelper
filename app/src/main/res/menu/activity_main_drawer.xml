@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/drawer_menu_main_home"
+            android:title="@string/drawer_menu_main_item_home_title" />
+        <item
+            android:id="@+id/drawer_menu_main_ping"
+            android:title="@string/drawer_menu_main_item_ping_title" />
+        <item
+            android:id="@+id/drawer_menu_main_port_scan"
+            android:title="@string/drawer_menu_main_item_port_scan_title" />
+
+    </group>
+
+</menu>
