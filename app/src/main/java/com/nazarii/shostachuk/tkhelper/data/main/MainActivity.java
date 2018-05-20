@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import com.nazarii.shostachuk.tkhelper.R;
 import com.nazarii.shostachuk.tkhelper.data.pingtool.PingToolActivity;
 import com.nazarii.shostachuk.tkhelper.data.portscanner.PortScannerActivity;
+import com.nazarii.shostachuk.tkhelper.data.subnetdevices.SubnetDevicesActivity;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void setupToolbar() {
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
     }
 
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.drawer_menu_main_port_scan:
                 startActivity(new Intent(this, PortScannerActivity.class));
                 return true;
+            case R.id.drawer_menu_main_subnet_devices:
+                startActivity(new Intent(this, SubnetDevicesActivity.class));
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -13,18 +13,17 @@ import java.util.concurrent.Callable;
 
 import io.reactivex.Observable;
 
-
 public class PortScanRxApi {
 
     public static PortScanRxApi getInstance() {
         return new PortScanRxApi();
     }
 
-    public Observable<PortHolder> doScan(String address) {
-        return Observable.fromCallable((Callable) () -> doScanApi(address));
+    public Observable<PortHolder> doScan(String address, PortScan.PortListener portListener) {
+        return Observable.fromCallable((Callable) () -> doScanApi(address, portListener));
     }
 
-    private PortHolder doScanApi(String address) throws UnknownHostException {
+    private PortHolder doScanApi(String address, PortScan.PortListener portListener) throws UnknownHostException {
         final long startTimeMillis = System.currentTimeMillis();
         PortHolder portHolder = new PortHolder();
         InetAddress inetAddress = InetAddress.getByName(address);
@@ -38,7 +37,7 @@ public class PortScanRxApi {
         TKUtils.log("PortScanning IP: " + inetAddress);
         portHolder.setInetAddress(inetAddress);
 
-        portHolder.setOpenPorts(PortScan.onAddress(inetAddress).setPortsPrivileged().doScan());
+        PortScan.onAddress(inetAddress).setPortsPrivileged().doScan(portListener);
         portHolder.setTimeInMs(String.valueOf(BigDecimal.valueOf(System.currentTimeMillis() - startTimeMillis / 1000.0f).toBigInteger()));
 
         return portHolder;

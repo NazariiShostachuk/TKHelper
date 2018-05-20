@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public interface PortScannerContract {
     interface View {
         void setPortScanResults(ArrayList<SimpleItem> items);
+        void setPortScanDevice(SimpleItem item);
 
         void showLoading(boolean loading);
     }

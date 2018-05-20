@@ -8,6 +8,7 @@ import com.nazarii.shostachuk.tkhelper.data.base.BasePresenter;
 import com.nazarii.shostachuk.tkhelper.data.portscanner.PortScannerContract.Presenter;
 import com.nazarii.shostachuk.tkhelper.data.portscanner.PortScannerContract.View;
 import com.nazarii.shostachuk.tkhelper.data.simple.SimpleItem;
+import com.nazarii.shostachuk.tkhelper.networktools.PortScan;
 import com.nazarii.shostachuk.tkhelper.utils.TKUtils;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class PortScannerPresenter extends BasePresenter<View> implements Presenter {
+public class PortScannerPresenter extends BasePresenter<View> implements Presenter, PortScan.PortListener {
     private Context context;
     private CompositeDisposable compositeDisposable;
 
@@ -27,11 +28,10 @@ public class PortScannerPresenter extends BasePresenter<View> implements Present
         compositeDisposable = new CompositeDisposable();
     }
 
-
     @Override
     public void doScan(String address) {
         view.showLoading(true);
-        compositeDisposable.add(PortScanRxApi.getInstance().doScan(address)
+        compositeDisposable.add(PortScanRxApi.getInstance().doScan(address, this)
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())
@@ -87,4 +87,13 @@ public class PortScannerPresenter extends BasePresenter<View> implements Present
     }
 
 
+    @Override
+    public void onResult(int portNo, boolean open) {
+        view.setPortScanDevice(new SimpleItem(portNo + " port is open", "", ""));
+    }
+
+    @Override
+    public void onFinished(ArrayList<Integer> openPorts) {
+
+    }
 }

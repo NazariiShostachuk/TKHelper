@@ -54,6 +54,11 @@ public class SimpleItemsAdapter extends RecyclerView.Adapter<SimpleItemsAdapter.
         return simpleItems.size();
     }
 
+    public void insertItem(SimpleItem item) {
+        simpleItems.add(item);
+        notifyDataSetChanged();
+    }
+
     public class SimpleItemsViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.item_ping_result_title)
         TextView title;

@@ -22,7 +22,6 @@
                 android:layout_marginBottom="4dp"
                 app:contentInsetStart="0dp"
                 app:contentInsetStartWithNavigation="0dp"
-                app:title="Ping"
                 app:titleTextColor="@android:color/white" />
 
             <RelativeLayout
@@ -46,11 +45,11 @@
                         android:paddingStart="4dp">
 
                         <EditText
-                            android:id="@+id/ping_tool_search"
+                            android:id="@+id/action_search"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_toStartOf="@+id/ping_tool_search_button"
+                            android:layout_toStartOf="@+id/action_search_button"
                             android:background="@android:color/transparent"
                             android:focusableInTouchMode="true"
                             android:hint="@string/activity_ping_tool_search_hint"
@@ -69,7 +68,7 @@
                             app:loading_width="2dp" />
 
                         <Button
-                            android:id="@+id/ping_tool_search_button"
+                            android:id="@+id/action_search_button"
                             style="?android:attr/buttonBarButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -86,7 +85,7 @@
         </android.support.design.widget.AppBarLayout>
 
         <RelativeLayout
-            android:id="@+id/ping_tool_content"
+            android:id="@+id/action_content"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@id/appBarLayout">

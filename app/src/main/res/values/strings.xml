@@ -10,4 +10,5 @@
     <string name="item_ping_result_failed_title">No answer</string>
     <string name="activity_port_scanner_scan_button_text">Scan</string>
     <string name="drawer_menu_main_item_port_scan_title">Port Scanner</string>
+    <string name="drawer_menu_main_item_subnet_devices_title">SubnetDevices</string>
 </resources>

@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".data.pingtool.PingToolActivity" />
         <activity android:name=".data.portscanner.PortScannerActivity" />
+        <activity android:name=".data.subnetdevices.SubnetDevicesActivity" />
     </application>
 
 </manifest>

@@ -10,6 +10,9 @@
         <item
             android:id="@+id/drawer_menu_main_port_scan"
             android:title="@string/drawer_menu_main_item_port_scan_title" />
+        <item
+            android:id="@+id/drawer_menu_main_subnet_devices"
+            android:title="@string/drawer_menu_main_item_subnet_devices_title" />
 
     </group>
 
