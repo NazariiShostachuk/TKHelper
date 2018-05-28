@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.nazarii.shostachuk.tkhelper.R;
+import com.nazarii.shostachuk.tkhelper.data.nodes.TopologiesActivity;
 import com.nazarii.shostachuk.tkhelper.data.pingtool.PingToolActivity;
 import com.nazarii.shostachuk.tkhelper.data.portscanner.PortScannerActivity;
 import com.nazarii.shostachuk.tkhelper.data.subnetdevices.SubnetDevicesActivity;
@@ -67,6 +68,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             case R.id.drawer_menu_main_subnet_devices:
                 startActivity(new Intent(this, SubnetDevicesActivity.class));
+                return true;
+            case R.id.drawer_menu_main_topo:
+                startActivity(new Intent(this, TopologiesActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
